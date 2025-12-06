@@ -1,0 +1,1419 @@
+<html lang="es"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6IjExYjc0YTUyNzgwMDk5ZjEzNDY0MmNlZWM3ZGE4MjNkMTc4MDc2ZjIiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMDQ0MTUxODc3NDE0NjQzNDM1MCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzRkNTI3ZDg1YTI0NDVhMTFfT2JyYUNvbnRyb2xfVmFuaWxsYS5odG1sLTMwNCJ9LCJleHAiOjE3NjQ5OTk3NDIsImlhdCI6MTc2NDk5NjE0MiwiYWxnIjoiUlMyNTYifQ.atnIqwWsJ4A2jQ1UsoJpzcbwHaDB1-xAvrX08-khErV04Jj5bEnIcTiUjImW6GZsJ8NOaHKwqvsE4kpu0BSX_qmY6mlbtdbsymxFY_BonI90PpTvnnBCWV4BpL2mdJN2BZYrg368PwlvLVpLkn-Hs1hc6Va52rVvnP_aezw5DOLukUzSSkY6G4_4fNT9JMGTQVBxooYmP0AOeB_ybnWjILtehRTFLx3yS6OJp37J9MGw_f1IDNlKpqvVtV__Y88ZSiakr04k7Bzn3w3Yk8ajKZ-v_98XwMxyr3zLxUWFE_hfwy-AhGSsjr9iuOfgcuzuI1he3Z6zVHqYiQByCFek8g","c_4d527d85a2445a11_ObraControl_Vanilla.html-304")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-2.5-flash-image-preview","imageTransformModelName":"gemini-2.5-flash-image-preview","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ObraControl 4x4 AI (Vanilla)</title>
+    
+    <!-- Estilos (Tailwind CSS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Librerías PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js" crossorigin="anonymous"></script>
+
+    <style>
+        body { background-color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
+        .hidden { display: none !important; }
+        /* Patrones visuales */
+        .pattern-diagonal {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 5px, rgba(0,0,0,0.1) 5px, rgba(0,0,0,0.1) 10px);
+        }
+        /* Utilidades para modales */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8); z-index: 50;
+            display: flex; align-items: center; justify-content: center;
+            padding: 1rem;
+        }
+        /* Animaciones simples */
+        .fade-in { animation: fadeIn 0.3s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.relative{position:relative}.sticky{position:sticky}.right-4{right:1rem}.top-4{top:1rem}.bottom-0{bottom:0px}.z-50{z-index:50}.col-span-1{grid-column:span 1 / span 1}.col-span-4{grid-column:span 4 / span 4}.my-6{margin-top:1.5rem;margin-bottom:1.5rem}.mb-1{margin-bottom:0.25rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-1{margin-top:0.25rem}.mb-2{margin-bottom:0.5rem}.mt-4{margin-top:1rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-\[50px\]{height:50px}.h-\[60px\]{height:60px}.h-8{height:2rem}.h-full{height:100%}.h-12{height:3rem}.h-6{height:1.5rem}.min-h-screen{min-height:100vh}.w-full{width:100%}.w-6{width:1.5rem}.max-w-md{max-width:28rem}.max-w-sm{max-width:24rem}.flex-1{flex:1 1 0%}.cursor-pointer{cursor:pointer}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.justify-around{justify-content:space-around}.gap-2{gap:0.5rem}.gap-4{gap:1rem}.gap-1{gap:0.25rem}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-3xl{border-radius:1.5rem}.border-4{border-width:4px}.border-8{border-width:8px}.border-2{border-width:2px}.border-b-4{border-bottom-width:4px}.border-t-4{border-top-width:4px}.border-r-4{border-right-width:4px}.border-dashed{border-style:dashed}.border-black{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.border-white{--tw-border-opacity:1;border-color:rgb(255 255 255 / var(--tw-border-opacity, 1))}.border-red-500{--tw-border-opacity:1;border-color:rgb(239 68 68 / var(--tw-border-opacity, 1))}.bg-black{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity, 1))}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-gray-800{--tw-bg-opacity:1;background-color:rgb(31 41 55 / var(--tw-bg-opacity, 1))}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-10{padding:2.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.pb-2{padding-bottom:0.5rem}.pb-4{padding-bottom:1rem}.pt-0{padding-top:0px}.pt-2{padding-top:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-6xl{font-size:3.75rem;line-height:1}.font-black{font-weight:900}.font-bold{font-weight:700}.uppercase{text-transform:uppercase}.tracking-wider{letter-spacing:0.05em}.text-black{--tw-text-opacity:1;color:rgb(0 0 0 / var(--tw-text-opacity, 1))}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-red-600{--tw-text-opacity:1;color:rgb(220 38 38 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-700:hover{--tw-bg-opacity:1;background-color:rgb(55 65 81 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-50:hover{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.hover\:bg-green-400:hover{--tw-bg-opacity:1;background-color:rgb(74 222 128 / var(--tw-bg-opacity, 1))}.hover\:bg-red-50:hover{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity, 1))}.hover\:text-blue-600:hover{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 768px){.md\:right-10{right:2.5rem}.md\:h-\[800px\]{height:800px}.md\:min-h-\[800px\]{min-height:800px}.md\:rounded-3xl{border-radius:1.5rem}.md\:border-8{border-width:8px}.md\:border-black{--tw-border-opacity:1;border-color:rgb(0 0 0 / var(--tw-border-opacity, 1))}.md\:pb-1{padding-bottom:0.25rem}.md\:pt-10{padding-top:2.5rem}}</style></head>
+<body class="font-sans text-black">
+
+    <!-- Botón Descargar Código Fuente -->
+    <button onclick="downloadSource()" class="fixed top-4 right-4 md:right-10 bg-gray-900 text-white p-3 rounded-full shadow-xl hover:bg-gray-700 z-50 text-xs font-bold flex items-center gap-2">
+        📥 <span>HTML</span>
+    </button>
+
+    <div class="min-h-screen flex justify-center items-start pt-0 md:pt-10">
+        <!-- Contenedor Principal (Simulador Móvil) -->
+        <div class="w-full max-w-md bg-white min-h-screen md:min-h-[800px] md:h-[800px] md:border-8 md:border-black md:rounded-3xl shadow-2xl overflow-hidden flex flex-col relative">
+            
+            <!-- Header -->
+            <div class="bg-black text-white p-4 flex justify-between items-center border-b-4 border-white md:border-black">
+                <div>
+                    <h1 class="text-xl font-black tracking-wider">OBRA CONTROL 4x4</h1>
+                    <p class="text-xs text-gray-400">VANILLA JS VERSION</p>
+                </div>
+                <button id="btnOffline" class="px-2 py-1 rounded font-bold text-xs bg-green-500 text-black">
+                    ONLINE
+                </button>
+            </div>
+
+            <!-- Área de Contenido -->
+            <div id="contentArea" class="flex-1 overflow-y-auto p-4 bg-white relative"><div class="flex justify-between items-end mb-4 border-b-4 border-black pb-2">
+                <div>
+                    <h2 class="text-xl font-black">SEMANA ACTUAL</h2>
+                    <div class="font-bold text-sm text-gray-500">📅 1/12 - 6/12</div>
+                </div>
+                <button onclick="toggleHistory()" class="underline font-bold text-sm">📜 HISTORIAL</button>
+            </div><div class="grid grid-cols-2 gap-2 mb-2">
+                <button onclick="openModal('modalAddWorker')" class="h-12 font-bold border-4 border-black text-sm bg-white hover:bg-gray-100">➕ TRABAJADOR</button>
+                <button onclick="openModal('modalLoan')" class="h-12 font-bold border-4 border-red-500 text-red-600 text-sm bg-white hover:bg-red-50">💸 PRÉSTAMO</button>
+            </div><div class="bg-white border-4 border-black overflow-hidden"><table class="w-full text-left"><thead class="bg-black text-white text-xs uppercase"><tr><th class="p-2">Nombre</th><th class="p-2 text-center">Asist</th><th class="p-2 text-right">$$$</th></tr></thead><tbody>
+                    <tr class="border-b-4 border-black">
+                        <td class="p-2 font-bold cursor-pointer hover:text-blue-600" onclick="alertWorkerDetail(1)">
+                            Juan<br>
+                            <span class="text-xs text-gray-500">Oficial Albañil</span>
+                            
+                        </td>
+                        <td class="p-1"><div class="grid grid-cols-3 gap-1"><button onclick="toggleAttendance(1, 'Mon')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">M</button><button onclick="toggleAttendance(1, 'Tue')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">T</button><button onclick="toggleAttendance(1, 'Wed')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">W</button><button onclick="toggleAttendance(1, 'Thu')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">T</button><button onclick="toggleAttendance(1, 'Fri')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">F</button><button onclick="toggleAttendance(1, 'Sat')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">S</button></div></td>
+                        <td class="p-2 text-right font-black">$4,500</td>
+                    </tr>
+                
+                    <tr class="border-b-4 border-black">
+                        <td class="p-2 font-bold cursor-pointer hover:text-blue-600" onclick="alertWorkerDetail(2)">
+                            Beto<br>
+                            <span class="text-xs text-gray-500">Electricista</span>
+                            
+                        </td>
+                        <td class="p-1"><div class="grid grid-cols-3 gap-1"><button onclick="toggleAttendance(2, 'Mon')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">M</button><button onclick="toggleAttendance(2, 'Tue')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">T</button><button onclick="toggleAttendance(2, 'Wed')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">W</button><button onclick="toggleAttendance(2, 'Thu')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">T</button><button onclick="toggleAttendance(2, 'Fri')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">F</button><button onclick="toggleAttendance(2, 'Sat')" class="w-6 h-6 border-2 border-black text-[10px] font-bold bg-black text-white">S</button></div></td>
+                        <td class="p-2 text-right font-black">$3,600</td>
+                    </tr>
+                </tbody></table></div><div class="sticky bottom-0 bg-white pt-2 border-t-4 border-black mt-4 grid grid-cols-5 gap-2">
+                <button onclick="preCloseWeek(8100)" class="col-span-4 bg-green-500 border-4 border-black font-black h-12 flex items-center justify-center gap-2 hover:bg-green-400">
+                    ✅ CERRAR SEMANA
+                </button>
+                <button onclick="exportPayrollPDF()" class="col-span-1 bg-gray-800 border-4 border-black text-white flex items-center justify-center">
+                    📄
+                </button>
+            </div></div>
+
+            <!-- Barra de Navegación -->
+            <div class="bg-white border-t-4 border-black flex justify-around p-1 pb-4 md:pb-1">
+                <button onclick="router('home')" class="nav-btn flex flex-col items-center justify-center p-2 w-full hover:bg-gray-100 text-black" id="nav-home">
+                    <span class="text-2xl">🏠</span>
+                    <span class="text-[10px] font-bold uppercase mt-1">Dash</span>
+                </button>
+                <button onclick="router('scanner')" class="nav-btn flex flex-col items-center justify-center p-2 w-full hover:bg-gray-100 text-black" id="nav-scanner">
+                    <span class="text-2xl">📸</span>
+                    <span class="text-[10px] font-bold uppercase mt-1">Escanear</span>
+                </button>
+                <button onclick="router('payroll')" class="nav-btn flex flex-col items-center justify-center p-2 w-full hover:bg-gray-100 bg-black text-white" id="nav-payroll">
+                    <span class="text-2xl">👷</span>
+                    <span class="text-[10px] font-bold uppercase mt-1">Nómina</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALES (Ocultos por defecto) -->
+    
+    <!-- Modal Confirmación Pago -->
+    <div id="modalConfirmPay" class="modal-overlay hidden">
+        <div class="bg-white border-4 border-black p-4 w-full max-w-sm shadow-2xl fade-in">
+            <h2 class="text-xl font-black uppercase mb-4 border-b-4 border-black pb-2">CONFIRMAR PAGO</h2>
+            <p class="text-center font-black text-3xl my-6" id="confirmPayAmount">$8,100</p>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="closeModal('modalConfirmPay')" class="w-full h-[60px] text-lg font-bold border-4 border-black bg-white text-black">CANCELAR</button>
+                <button onclick="executePayment()" class="w-full h-[60px] text-lg font-bold border-4 border-black bg-green-500 text-black">PAGAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Nuevo Trabajador -->
+    <div id="modalAddWorker" class="modal-overlay hidden">
+        <div class="bg-white border-4 border-black p-4 w-full max-w-sm shadow-2xl fade-in">
+            <h2 class="text-xl font-black uppercase mb-4 border-b-4 border-black pb-2">NUEVO TRABAJADOR</h2>
+            <div class="mb-4">
+                <label class="block text-black font-bold text-lg mb-1">Nombre</label>
+                <input type="text" id="newWorkerName" class="w-full h-[50px] border-4 border-black p-2 font-bold bg-gray-50">
+            </div>
+            <div class="mb-4">
+                <label class="block text-black font-bold text-lg mb-1">Puesto</label>
+                <input type="text" id="newWorkerRole" class="w-full h-[50px] border-4 border-black p-2 font-bold bg-gray-50" placeholder="Ej. Albañil">
+            </div>
+            <div class="mb-4">
+                <label class="block text-black font-bold text-lg mb-1">Sueldo Semanal</label>
+                <input type="number" id="newWorkerSalary" class="w-full h-[50px] border-4 border-black p-2 font-bold bg-gray-50">
+            </div>
+            <div class="mb-6">
+                <label class="block text-black font-bold text-lg mb-1">Categoría</label>
+                <select id="newWorkerCategory" class="w-full h-[50px] border-4 border-black p-2 font-bold bg-white">
+                    <option value="Albañilería">Albañilería</option>
+                    <option value="Instalaciones">Instalaciones</option>
+                    <option value="Acabados">Acabados</option>
+                    <option value="General">General</option>
+                </select>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="closeModal('modalAddWorker')" class="w-full h-[50px] font-bold border-4 border-black">CANCELAR</button>
+                <button onclick="saveNewWorker()" class="w-full h-[50px] font-bold border-4 border-black bg-black text-white">GUARDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Préstamo -->
+    <div id="modalLoan" class="modal-overlay hidden">
+        <div class="bg-white border-4 border-black p-4 w-full max-w-sm shadow-2xl fade-in">
+            <h2 class="text-xl font-black uppercase mb-4 border-b-4 border-black pb-2">REGISTRAR PRÉSTAMO</h2>
+            <div class="mb-4">
+                <label class="block text-black font-bold text-lg mb-1">Trabajador</label>
+                <select id="loanWorkerId" class="w-full h-[50px] border-4 border-black p-2 font-bold bg-white">
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+            <div class="mb-6">
+                <label class="block text-black font-bold text-lg mb-1">Monto ($)</label>
+                <input type="number" id="loanAmount" class="w-full h-[50px] border-4 border-black p-2 font-bold bg-gray-50">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="closeModal('modalLoan')" class="w-full h-[50px] font-bold border-4 border-black">CANCELAR</button>
+                <button onclick="saveLoan()" class="w-full h-[50px] font-bold border-4 border-black bg-red-500 text-white">PRESTAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edición Presupuesto -->
+    <div id="modalEditBudget" class="modal-overlay hidden">
+        <div class="bg-white border-4 border-black p-4 w-full max-w-sm shadow-2xl fade-in">
+            <h2 class="text-xl font-black uppercase mb-4">EDITAR PRESUPUESTO</h2>
+            <p id="editBudgetTitle" class="mb-4 font-bold text-gray-500">PARTIDA</p>
+            <input type="number" id="newBudgetAmount" class="w-full h-[60px] border-4 border-black p-2 text-2xl font-black mb-6">
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="closeModal('modalEditBudget')" class="w-full h-[50px] font-bold border-4 border-black">CANCELAR</button>
+                <button onclick="saveBudget()" class="w-full h-[50px] font-bold border-4 border-black bg-black text-white">GUARDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- ESTADO GLOBAL (DATABASE) ---
+        const DB_KEYS = {
+            EXPENSES: 'obra_expenses',
+            WORKERS: 'obra_workers',
+            HISTORY: 'obra_history',
+            INVENTORY: 'obra_inventory',
+            BUDGETS: 'obra_budgets',
+            PENDING: 'obra_pending'
+        };
+
+        const INITIAL_DATA = {
+            EXPENSES: [{ id: 1, amount: '2400', concept: 'Ticket Construrama (Cemento)', category: 'Albañilería', date: '2023-12-05', items: [{ raw_name: "Cemento Tolteca", qty: 10, unit_price: 240, total: 2400 }] }],
+            WORKERS: [
+                { id: 1, name: 'Juan Pérez', role: 'Oficial Albañil', defaultCategory: 'Albañilería', salary: 750, loans: [], attendance: { Mon: true, Tue: true, Wed: true, Thu: true, Fri: true, Sat: true } },
+                { id: 2, name: 'Beto "El Chispas"', role: 'Electricista', defaultCategory: 'Instalaciones', salary: 600, loans: [], attendance: { Mon: true, Tue: true, Wed: true, Thu: true, Fri: true, Sat: true } }
+            ],
+            BUDGETS: { 'Albañilería': 50000, 'Acabados': 30000, 'Instalaciones': 25000, 'Servicios': 10000, 'Maquinaria': 20000, 'General': 15000 }
+        };
+
+        // --- MANEJO DE ESTADO ---
+        function getState(key, defaultVal) {
+            const data = localStorage.getItem(key);
+            return data ? JSON.parse(data) : defaultVal;
+        }
+
+        function setState(key, val) {
+            localStorage.setItem(key, JSON.stringify(val));
+            render(); // Re-render global simple
+        }
+
+        let state = {
+            view: 'home', // home, scanner, payroll
+            subView: null, // Para detalles
+            expenses: getState(DB_KEYS.EXPENSES, INITIAL_DATA.EXPENSES),
+            workers: getState(DB_KEYS.WORKERS, INITIAL_DATA.WORKERS),
+            history: getState(DB_KEYS.HISTORY, []),
+            inventory: getState(DB_KEYS.INVENTORY, {}),
+            budgets: getState(DB_KEYS.BUDGETS, INITIAL_DATA.BUDGETS),
+            pending: getState(DB_KEYS.PENDING, []),
+            isOffline: false,
+            // Estados temporales UI
+            activeDashboardView: 'money', // money | materials
+            scannedData: null,
+            isScanning: false,
+            currentCategory: null, // Para drill-down
+            editingBudgetCategory: null
+        };
+
+        // --- UTILIDADES ---
+        const formatMoney = (amount) => '$' + parseFloat(amount).toLocaleString('es-MX');
+        const formatDate = (dateString) => {
+            if(!dateString) return '';
+            const d = new Date(dateString);
+            return isNaN(d) ? dateString : d.toLocaleDateString('es-MX', {day: '2-digit', month: 'short'});
+        };
+        const getWeekRange = () => {
+            const d = new Date();
+            const first = d.getDate() - d.getDay() + 1;
+            const last = first + 5;
+            const d1 = new Date(d.setDate(first));
+            const d2 = new Date(d.setDate(last));
+            return `${d1.getDate()}/${d1.getMonth()+1} - ${d2.getDate()}/${d2.getMonth()+1}`;
+        };
+
+        // --- ROUTING ---
+        function router(view, params = null) {
+            state.view = view;
+            if(params) state.subView = params;
+            else state.subView = null;
+            
+            // Actualizar botones nav
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-black', 'text-white');
+                btn.classList.add('text-black');
+            });
+            const activeBtn = document.getElementById(`nav-${view}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-black');
+                activeBtn.classList.add('bg-black', 'text-white');
+            }
+            
+            render();
+        }
+
+        // --- RENDERIZADO PRINCIPAL ---
+        function render() {
+            const container = document.getElementById('contentArea');
+            container.innerHTML = '';
+
+            if (state.view === 'home') renderDashboard(container);
+            else if (state.view === 'scanner') renderScanner(container);
+            else if (state.view === 'payroll') renderPayroll(container);
+        }
+
+        // ==========================================
+        // 1. DASHBOARD
+        // ==========================================
+        function renderDashboard(container) {
+            // Sub-navegación
+            const nav = document.createElement('div');
+            nav.className = "grid grid-cols-2 gap-2 mb-4";
+            nav.innerHTML = `
+                <button onclick="state.activeDashboardView='money'; render()" class="h-[50px] font-bold border-4 border-black ${state.activeDashboardView==='money' ? 'bg-black text-white' : 'bg-white'}">💰 DINERO</button>
+                <button onclick="state.activeDashboardView='materials'; render()" class="h-[50px] font-bold border-4 border-black ${state.activeDashboardView==='materials' ? 'bg-black text-white' : 'bg-white'}">📦 MATERIALES</button>
+            `;
+            container.appendChild(nav);
+
+            if (state.subView && state.subView.type === 'categoryDetail') {
+                renderCategoryDetail(container, state.subView.category);
+                return;
+            }
+
+            if (state.activeDashboardView === 'money') {
+                // Calcular totales
+                const categoryTotals = state.expenses.reduce((acc, curr) => {
+                    const cat = curr.category || 'Varios';
+                    acc[cat] = (acc[cat] || 0) + parseFloat(curr.amount);
+                    return acc;
+                }, {});
+                
+                const allCats = [...new Set([...Object.keys(state.budgets), ...Object.keys(categoryTotals)])];
+
+                allCats.forEach(cat => {
+                    const spent = categoryTotals[cat] || 0;
+                    const limit = state.budgets[cat] || 0;
+                    if (limit === 0 && spent === 0) return;
+                    
+                    const pct = limit > 0 ? Math.min((spent/limit)*100, 100) : 100;
+                    let color = 'bg-green-500';
+                    if(pct > 70) color = 'bg-yellow-400';
+                    if(pct > 90) color = 'bg-red-500 pattern-diagonal';
+
+                    const card = document.createElement('div');
+                    card.className = "bg-white border-4 border-black p-4 mb-2 cursor-pointer hover:bg-gray-50 active:scale-95 transition-transform";
+                    card.onclick = () => router('home', { type: 'categoryDetail', category: cat });
+                    card.innerHTML = `
+                        <div class="flex justify-between items-end mb-2">
+                            <span class="text-xl font-black">${cat}</span>
+                            <span class="text-lg font-bold">${formatMoney(spent)} <span class="text-gray-400 text-sm">/ ${limit > 0 ? formatMoney(limit) : '∞'}</span></span>
+                        </div>
+                        <div class="w-full h-8 border-4 border-black bg-white relative">
+                            <div class="h-full border-r-4 border-black ${color}" style="width: ${pct}%"></div>
+                        </div>
+                        <div class="text-right mt-1 font-bold text-sm text-gray-600">${pct.toFixed(0)}% GASTADO</div>
+                    `;
+                    container.appendChild(card);
+                });
+            } else {
+                // Vista Materiales
+                if (Object.keys(state.inventory).length === 0) {
+                    container.innerHTML += `<p class="text-gray-500 text-center py-10 font-bold">Sin inventario. Escanea facturas.</p>`;
+                } else {
+                    const list = document.createElement('div');
+                    list.className = "bg-white border-4 border-black p-4";
+                    list.innerHTML = `<h2 class="text-xl font-black border-b-4 border-black pb-2 mb-4">INVENTARIO</h2>`;
+                    
+                    Object.entries(state.inventory).forEach(([name, data]) => {
+                        list.innerHTML += `
+                            <div class="flex justify-between items-center border-b-2 border-gray-200 pb-2 mb-2">
+                                <div>
+                                    <p class="font-black text-lg">${name}</p>
+                                    <span class="text-xs font-bold bg-gray-200 px-1">${data.category}</span>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-2xl font-black">${data.qty}</p>
+                                    <p class="text-xs font-bold text-gray-500">UNIDADES</p>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    container.appendChild(list);
+                }
+            }
+        }
+
+        function renderCategoryDetail(container, category) {
+            const expenses = state.expenses.filter(e => e.category === category);
+            const spent = expenses.reduce((sum, e) => sum + parseFloat(e.amount), 0);
+            const limit = state.budgets[category] || 0;
+            const pct = limit > 0 ? Math.min((spent/limit)*100, 100) : 0;
+
+            const header = document.createElement('div');
+            header.innerHTML = `
+                <button onclick="router('home')" class="mb-4 flex items-center gap-2 font-bold bg-white border-4 border-black px-4 py-2">
+                    ⬅️ VOLVER
+                </button>
+                <div class="bg-yellow-50 border-4 border-black p-4 mb-4">
+                    <div class="flex justify-between items-end mb-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <p class="text-sm font-bold text-gray-500">PRESUPUESTO TOPE</p>
+                                <button onclick="openBudgetModal('${category}', ${limit})" class="text-lg">✏️</button>
+                            </div>
+                            <p class="text-3xl font-black">${formatMoney(limit)}</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm font-bold text-gray-500">REAL</p>
+                            <p class="text-3xl font-black text-red-600">-${formatMoney(spent)}</p>
+                        </div>
+                    </div>
+                    <div class="w-full h-6 border-4 border-black bg-white">
+                        <div class="h-full bg-green-500 border-r-4 border-black" style="width: ${pct}%"></div>
+                    </div>
+                </div>
+                <button onclick="exportPDF('${category}')" class="w-full bg-gray-900 text-white font-bold py-3 mb-4 border-4 border-black flex items-center justify-center gap-2">
+                    📄 DESCARGAR REPORTE PDF
+                </button>
+                <div class="bg-white border-4 border-black">
+                    <div class="bg-black text-white p-2 font-bold flex justify-between"><span>CONCEPTO</span><span>MONTO</span></div>
+                    ${expenses.length === 0 ? '<div class="p-4 text-center text-gray-500">Sin tickets</div>' : ''}
+                    <div class="divide-y-4 divide-black">
+                        ${expenses.map(e => `
+                            <div onclick="alertDetail('${e.concept}', '${e.date}', ${e.amount}, '${JSON.stringify(e.items).replace(/"/g, '&quot;')}')" class="p-3 hover:bg-gray-100 cursor-pointer flex justify-between items-center">
+                                <div>
+                                    <div class="font-black uppercase text-sm">${e.concept}</div>
+                                    <div class="text-xs text-gray-500">📅 ${formatDate(e.date)}</div>
+                                </div>
+                                <div class="font-black text-lg">${formatMoney(e.amount)} ▶️</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            container.appendChild(header);
+        }
+
+        // ==========================================
+        // 2. SCANNER (IA)
+        // ==========================================
+        function renderScanner(container) {
+            // Verificar cola
+            if (state.pending.length > 0) {
+                const pendingDiv = document.createElement('div');
+                pendingDiv.className = "bg-yellow-50 border-l-8 border-yellow-400 p-4 mb-6";
+                pendingDiv.innerHTML = `
+                    <div class="font-bold text-yellow-800 text-lg mb-2">⚠️ ${state.pending.length} Tickets Pendientes</div>
+                    <p class="text-sm text-yellow-700 mb-4">Guardados sin conexión.</p>
+                    <button onclick="processPendingQueue()" class="w-full bg-yellow-400 border-4 border-yellow-600 font-black py-2 rounded">
+                        🔄 SINCRONIZAR AHORA
+                    </button>
+                `;
+                container.appendChild(pendingDiv);
+            }
+
+            if (state.isScanning) {
+                container.innerHTML += `
+                    <div class="flex flex-col items-center justify-center h-64 text-center animate-pulse">
+                        <div class="text-6xl mb-4">🧠</div>
+                        <h3 class="text-2xl font-black">ANALIZANDO...</h3>
+                        <p class="font-bold text-gray-500">Google Gemini está leyendo tu ticket</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const scanBox = document.createElement('div');
+            scanBox.className = "border-8 border-dashed border-black rounded-3xl p-10 text-center bg-gray-50 cursor-pointer hover:bg-gray-200 transition-colors";
+            scanBox.onclick = () => document.getElementById('fileInput').click();
+            scanBox.innerHTML = `
+                <div class="text-6xl mb-4">📸</div>
+                <h2 class="text-2xl font-black mb-2">TOMAR FOTO</h2>
+                <p class="font-bold text-gray-500">Toca aquí para escanear ticket o factura</p>
+                <input type="file" id="fileInput" accept="image/*" class="hidden" onchange="handleFileUpload(this)">
+            `;
+            container.appendChild(scanBox);
+        }
+
+        async function handleFileUpload(input) {
+            const file = input.files[0];
+            if (!file) return;
+
+            // Modo Offline o Sin Red
+            if (state.isOffline || !navigator.onLine) {
+                const base64 = await toBase64(file);
+                const ticket = { id: Date.now(), image: base64, mimeType: file.type, date: new Date().toISOString() };
+                state.pending.push(ticket);
+                setState(DB_KEYS.PENDING, state.pending);
+                alert("🔌 SIN CONEXIÓN: Guardado en cola de pendientes.");
+                render();
+                return;
+            }
+
+            state.isScanning = true;
+            render();
+
+            try {
+                const base64 = await toBase64(file);
+                const apiKey = "AIzaSyBpVkPhF3koAVWkWAJgTMYxYNAIfJ-zyWI"; // Key Hardcoded
+                
+                const prompt = `Analiza imagen. Extrae JSON exacto: { "store_name": "string", "date": "YYYY-MM-DD", "total_amount": number, "category_hint": "Materiales|Combustible|Servicios|General", "items": [{ "raw_name": "string", "qty": number, "unit_price": number, "total": number }] }. Si no hay items, inventa uno general.`;
+
+                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }, { inlineData: { mimeType: file.type, data: base64 } }] }] })
+                });
+
+                const data = await response.json();
+                const text = data.candidates[0].content.parts[0].text.replace(/```json|```/g, '').trim();
+                const json = JSON.parse(text);
+
+                // Estandarizar
+                const standardizedItems = json.items.map(i => {
+                    let cat = 'General';
+                    let name = i.raw_name;
+                    if(name.match(/cemento|mortero/i)) { cat = 'Albañilería'; name='Cemento/Mortero'; }
+                    if(name.match(/gasolina|magna/i)) { cat = 'Maquinaria'; name='Gasolina'; }
+                    if(name.match(/cfe|luz/i)) { cat = 'Servicios'; name='Pago Luz'; }
+                    return { ...i, std_name: name, category: cat };
+                });
+
+                // Guardar
+                const newExpense = {
+                    id: Date.now(),
+                    amount: json.total_amount,
+                    concept: `Factura: ${json.store_name}`,
+                    category: json.category_hint || 'General',
+                    date: json.date,
+                    items: standardizedItems
+                };
+
+                state.expenses.unshift(newExpense);
+                setState(DB_KEYS.EXPENSES, state.expenses);
+
+                // Actualizar Inventario
+                const newInv = { ...state.inventory };
+                if (['Servicios', 'Maquinaria'].includes(newExpense.category)) {
+                    const k = json.store_name;
+                    if(!newInv[k]) newInv[k] = { qty: 0, category: newExpense.category };
+                    newInv[k].qty += 1;
+                } else {
+                    standardizedItems.forEach(i => {
+                        const k = i.std_name;
+                        if(!newInv[k]) newInv[k] = { qty: 0, category: i.category };
+                        newInv[k].qty += (i.qty || 1);
+                    });
+                }
+                setState(DB_KEYS.INVENTORY, newInv);
+
+                alert(`✅ Procesado: $${json.total_amount} en ${newExpense.category}`);
+
+            } catch (e) {
+                alert("Error IA: " + e.message);
+            } finally {
+                state.isScanning = false;
+                render();
+            }
+        }
+
+        async function processPendingQueue() {
+            alert("Procesando cola... (Simulación)");
+            state.pending = [];
+            setState(DB_KEYS.PENDING, []);
+            render();
+        }
+
+        function toBase64(file) {
+            return new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // ==========================================
+        // 3. NOMINA
+        // ==========================================
+        function renderPayroll(container) {
+            // Header
+            const header = document.createElement('div');
+            header.className = "flex justify-between items-end mb-4 border-b-4 border-black pb-2";
+            header.innerHTML = `
+                <div>
+                    <h2 class="text-xl font-black">SEMANA ACTUAL</h2>
+                    <div class="font-bold text-sm text-gray-500">📅 ${getWeekRange()}</div>
+                </div>
+                <button onclick="toggleHistory()" class="underline font-bold text-sm">📜 HISTORIAL</button>
+            `;
+            container.appendChild(header);
+
+            if (state.subView === 'history') {
+                renderHistory(container);
+                return;
+            }
+
+            // Actions
+            const actions = document.createElement('div');
+            actions.className = "grid grid-cols-2 gap-2 mb-2";
+            actions.innerHTML = `
+                <button onclick="openModal('modalAddWorker')" class="h-12 font-bold border-4 border-black text-sm bg-white hover:bg-gray-100">➕ TRABAJADOR</button>
+                <button onclick="openModal('modalLoan')" class="h-12 font-bold border-4 border-red-500 text-red-600 text-sm bg-white hover:bg-red-50">💸 PRÉSTAMO</button>
+            `;
+            container.appendChild(actions);
+
+            // Lista Trabajadores
+            const list = document.createElement('div');
+            list.className = "bg-white border-4 border-black overflow-hidden";
+            let html = `<table class="w-full text-left"><thead class="bg-black text-white text-xs uppercase"><tr><th class="p-2">Nombre</th><th class="p-2 text-center">Asist</th><th class="p-2 text-right">$$$</th></tr></thead><tbody>`;
+            
+            let totalPayroll = 0;
+
+            state.workers.forEach(w => {
+                const daysWorked = Object.values(w.attendance).filter(Boolean).length;
+                const loans = w.loans.reduce((sum, l) => sum + l.amount, 0); // Simplificación: suma todos los préstamos históricos para demo
+                const toPay = (daysWorked * (w.salary / 6)) - loans; // Salary es semanal en data structure, pero logica pide diario. Ajustemos logica: salary en DB es SEMANAL? No, en el código anterior era diario para calculo. Asumamos SALARIO DIARIO = salary / 6. O salary es diario. En INITIAL_DATA salary=750 (parece diario).
+                // Ajuste: si salary es 750 diario.
+                const daily = w.salary; 
+                const totalWorker = (daysWorked * daily) - loans;
+                totalPayroll += totalWorker;
+
+                const daysHtml = ['Mon','Tue','Wed','Thu','Fri','Sat'].map(d => 
+                    `<button onclick="toggleAttendance(${w.id}, '${d}')" class="w-6 h-6 border-2 border-black text-[10px] font-bold ${w.attendance[d] ? 'bg-black text-white' : 'bg-white text-gray-300'}">${d[0]}</button>`
+                ).join('');
+
+                html += `
+                    <tr class="border-b-4 border-black">
+                        <td class="p-2 font-bold cursor-pointer hover:text-blue-600" onclick="alertWorkerDetail(${w.id})">
+                            ${w.name.split(' ')[0]}<br>
+                            <span class="text-xs text-gray-500">${w.role}</span>
+                            ${loans > 0 ? `<div class="text-xs text-red-600">-$${loans} Deuda</div>` : ''}
+                        </td>
+                        <td class="p-1"><div class="grid grid-cols-3 gap-1">${daysHtml}</div></td>
+                        <td class="p-2 text-right font-black">${formatMoney(totalWorker)}</td>
+                    </tr>
+                `;
+            });
+            html += `</tbody></table>`;
+            list.innerHTML = html;
+            container.appendChild(list);
+
+            // Footer
+            const footer = document.createElement('div');
+            footer.className = "sticky bottom-0 bg-white pt-2 border-t-4 border-black mt-4 grid grid-cols-5 gap-2";
+            footer.innerHTML = `
+                <button onclick="preCloseWeek(${totalPayroll})" class="col-span-4 bg-green-500 border-4 border-black font-black h-12 flex items-center justify-center gap-2 hover:bg-green-400">
+                    ✅ CERRAR SEMANA
+                </button>
+                <button onclick="exportPayrollPDF()" class="col-span-1 bg-gray-800 border-4 border-black text-white flex items-center justify-center">
+                    📄
+                </button>
+            `;
+            container.appendChild(footer);
+        }
+
+        function renderHistory(container) {
+            container.innerHTML = `
+                <button onclick="router('payroll')" class="mb-4 bg-white border-4 border-black px-4 py-2 font-bold">⬅️ VOLVER</button>
+                <div class="bg-white border-4 border-black p-4">
+                    <h2 class="text-xl font-black mb-4">HISTORIAL DE NÓMINAS</h2>
+                    ${state.history.length === 0 ? '<p>No hay registros.</p>' : state.history.map(h => `
+                        <div class="border-b-2 border-gray-200 py-2 flex justify-between">
+                            <span class="font-bold">${h.date}</span>
+                            <span class="font-black">${formatMoney(h.total)}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // --- LÓGICA DE NEGOCIO ---
+
+        function toggleAttendance(id, day) {
+            const w = state.workers.find(x => x.id === id);
+            if(w) {
+                w.attendance[day] = !w.attendance[day];
+                setState(DB_KEYS.WORKERS, state.workers);
+            }
+        }
+
+        function saveNewWorker() {
+            const name = document.getElementById('newWorkerName').value;
+            const role = document.getElementById('newWorkerRole').value;
+            const salary = document.getElementById('newWorkerSalary').value;
+            const cat = document.getElementById('newWorkerCategory').value;
+            
+            if(!name || !salary) return alert("Datos incompletos");
+
+            state.workers.push({
+                id: Date.now(),
+                name, role, defaultCategory: cat,
+                salary: parseFloat(salary) / 6, // Convertir semanal a diario aprox
+                loans: [],
+                attendance: { Mon: true, Tue: true, Wed: true, Thu: true, Fri: true, Sat: true }
+            });
+            setState(DB_KEYS.WORKERS, state.workers);
+            closeModal('modalAddWorker');
+        }
+
+        function saveLoan() {
+            const id = parseInt(document.getElementById('loanWorkerId').value);
+            const amount = parseFloat(document.getElementById('loanAmount').value);
+            
+            const w = state.workers.find(x => x.id === id);
+            if(w && amount) {
+                w.loans.push({ id: Date.now(), amount, date: new Date().toISOString() });
+                setState(DB_KEYS.WORKERS, state.workers);
+                closeModal('modalLoan');
+            }
+        }
+
+        function preCloseWeek(total) {
+            document.getElementById('confirmPayAmount').innerText = formatMoney(total);
+            openModal('modalConfirmPay');
+        }
+
+        function executePayment() {
+            // Generar gastos agrupados
+            const expensesByCat = {};
+            let totalNet = 0;
+
+            state.workers.forEach(w => {
+                const days = Object.values(w.attendance).filter(Boolean).length;
+                const gross = days * w.salary;
+                const loans = w.loans.reduce((s, l) => s + l.amount, 0); // Asumimos que se cobran todos
+                
+                if (gross > 0) {
+                    const cat = w.defaultCategory;
+                    if(!expensesByCat[cat]) expensesByCat[cat] = { total: 0, items: [] };
+                    expensesByCat[cat].total += gross;
+                    expensesByCat[cat].items.push({
+                        raw_name: w.name,
+                        qty: days,
+                        unit_price: w.salary,
+                        total: gross,
+                        loans: loans
+                    });
+                    totalNet += (gross - loans);
+                }
+            });
+
+            // Guardar Expenses
+            Object.entries(expensesByCat).forEach(([cat, data]) => {
+                state.expenses.unshift({
+                    id: Date.now() + Math.random(),
+                    amount: data.total,
+                    concept: `Raya Semanal: ${getWeekRange()}`,
+                    category: cat,
+                    date: new Date().toISOString(),
+                    items: data.items
+                });
+            });
+            setState(DB_KEYS.EXPENSES, state.expenses);
+
+            // Guardar Historial
+            state.history.unshift({
+                id: Date.now(),
+                date: getWeekRange(),
+                total: totalNet
+            });
+            setState(DB_KEYS.HISTORY, state.history);
+
+            // Resetear Workers
+            state.workers.forEach(w => {
+                w.attendance = { Mon: false, Tue: false, Wed: false, Thu: false, Fri: false, Sat: false };
+                w.loans = []; // Borrar préstamos cobrados
+            });
+            setState(DB_KEYS.WORKERS, state.workers);
+
+            closeModal('modalConfirmPay');
+            alert("Semana cerrada correctamente.");
+        }
+
+        function saveBudget() {
+            const val = document.getElementById('newBudgetAmount').value;
+            if(state.editingBudgetCategory && val) {
+                state.budgets[state.editingBudgetCategory] = parseFloat(val);
+                setState(DB_KEYS.BUDGETS, state.budgets);
+                closeModal('modalEditBudget');
+                // Forzar refresco vista detalle si estamos ahí
+                if(state.subView && state.subView.category === state.editingBudgetCategory) {
+                    render();
+                }
+            }
+        }
+
+        // --- INTERFAZ PDF ---
+        function exportPDF(category) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text(`Reporte: ${category}`, 10, 10);
+            
+            const rows = state.expenses
+                .filter(e => e.category === category)
+                .map(e => [formatDate(e.date), e.concept, formatMoney(e.amount)]);
+                
+            doc.autoTable({ head: [['Fecha', 'Concepto', 'Monto']], body: rows });
+            doc.save(`Reporte_${category}.pdf`);
+        }
+
+        function exportPayrollPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            doc.text("Nómina Semanal", 10, 10);
+            
+            const rows = state.workers.map(w => {
+                const days = Object.values(w.attendance).filter(Boolean).length;
+                const loans = w.loans.reduce((s,l)=>s+l.amount,0);
+                const total = (days * w.salary) - loans;
+                return [w.name, days, formatMoney(w.salary), formatMoney(loans), formatMoney(total)];
+            });
+
+            doc.autoTable({ head: [['Nombre', 'Días', 'Diario', 'Préstamos', 'A Pagar']], body: rows });
+            doc.save('Nomina.pdf');
+        }
+
+        // --- MANEJO DE MODALES ---
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+            // Popular selects dinámicos si es necesario
+            if(id === 'modalLoan') {
+                const sel = document.getElementById('loanWorkerId');
+                sel.innerHTML = state.workers.map(w => `<option value="${w.id}">${w.name}</option>`).join('');
+            }
+        }
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+        function openBudgetModal(cat, currentVal) {
+            state.editingBudgetCategory = cat;
+            document.getElementById('editBudgetTitle').innerText = cat;
+            document.getElementById('newBudgetAmount').value = currentVal;
+            openModal('modalEditBudget');
+        }
+        function alertDetail(concept, date, amount, itemsStr) {
+            alert(`Detalle:\n${concept}\n$${amount}\n\nItems:\n` + JSON.parse(itemsStr).map(i => `- ${i.raw_name}: $${i.total}`).join('\n'));
+        }
+        function alertWorkerDetail(id) {
+            const w = state.workers.find(x => x.id === id);
+            const loans = w.loans.map(l => `$${l.amount} (${formatDate(l.date)})`).join('\n');
+            alert(`Trabajador: ${w.name}\n\nPréstamos Activos:\n${loans || 'Ninguno'}`);
+        }
+
+        // --- UTILS DE DESCARGA DE CÓDIGO ---
+        function downloadSource() {
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'index.html';
+            a.click();
+        }
+
+        // --- INIT ---
+        window.onload = () => {
+            // Botón Offline
+            const btnOff = document.getElementById('btnOffline');
+            btnOff.onclick = () => {
+                state.isOffline = !state.isOffline;
+                btnOff.innerText = state.isOffline ? 'OFFLINE' : 'ONLINE';
+                btnOff.className = `px-2 py-1 rounded font-bold text-xs ${state.isOffline ? 'bg-red-500 text-white' : 'bg-green-500 text-black'}`;
+            };
+            
+            router('home');
+        };
+
+        // Exponer funciones al window para onclicks del HTML
+        window.router = router;
+        window.openModal = openModal;
+        window.closeModal = closeModal;
+        window.saveNewWorker = saveNewWorker;
+        window.saveLoan = saveLoan;
+        window.toggleAttendance = toggleAttendance;
+        window.preCloseWeek = preCloseWeek;
+        window.executePayment = executePayment;
+        window.exportPayrollPDF = exportPayrollPDF;
+        window.exportPDF = exportPDF;
+        window.openBudgetModal = openBudgetModal;
+        window.saveBudget = saveBudget;
+        window.handleFileUpload = handleFileUpload;
+        window.processPendingQueue = processPendingQueue;
+        window.alertDetail = alertDetail;
+        window.alertWorkerDetail = alertWorkerDetail;
+        window.downloadSource = downloadSource;
+
+    </script>
+
+</body></html>
